@@ -13,3 +13,10 @@ run:
 	python main.py
 docker_build:
 	docker build -t hello-world-printer-app .
+USERNAME=asia21991
+TAG=$(USERNAME)/hello-world-printer-app
+docker_push:
+	docker login --username $(USERNAME) --password $(PASSWORD) : \
+	docker tag hello-world-printer-app $(TAG); \
+	docker push $(TAG); \
+	docker logout;
