@@ -10,3 +10,7 @@ script:
 after_success:
         - make docker_build
         - PASSWORD=${DOCKER_PASSWORD} make docker_push
+deploy:
+  provider: heroku
+  app: nameless-castle-28127
+  api_key: ${43f8d48b-41d3-4814-9184-bf53d6a97dd6}
