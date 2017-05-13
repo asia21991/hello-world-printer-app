@@ -1,4 +1,4 @@
-.PHONY: test #ignoruj katalog
+.PHONY: test test_ui #ignoruj katalog
 
 deps:
 	pip install -r requirements.txt; \
@@ -24,5 +24,4 @@ docker_push:
 	docker logout;
 
 test_ui:
-	python sel.py
-
+	python test_ui/sel.py
