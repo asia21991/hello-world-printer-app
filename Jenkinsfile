@@ -5,7 +5,7 @@ pipeline {
             steps {
 	            sh 'make deps'
 	            sh 'make test'
-		    sh 'make test_with_cov || true'
+		    sh 'make test_cov || true'
 		    step([$class: 'XUnitBuiler',
 			thresholds: [
 				[$class: 'SkippedThreshold', failureThreshold: '0'],
